@@ -2,6 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMvc();
 
+string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
