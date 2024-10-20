@@ -1,12 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Elibrary.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Elibrary.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        ApplicationContext db;
+        public HomeController(ApplicationContext context)
         {
-            return View();
+            db = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            return View(await db.Books.ToListAsync());
         }
     }
 }

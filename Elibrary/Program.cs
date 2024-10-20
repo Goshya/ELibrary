@@ -11,7 +11,7 @@ builder.Services.AddDbContext<ApplicationContext>(options => options.UseMySql(co
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+//app.MapGet("/", () => "Hello World!");
 
 app.MapControllerRoute(
     name: "default",

@@ -1,4 +1,7 @@
-﻿namespace Elibrary.Models
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
+namespace Elibrary.Models
 {
     public class Book
     {
